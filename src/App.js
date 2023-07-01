@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
+import Pane from './Components/Pane'
+import ViewNotes from './Components/ViewNotes'
 import './App.css'
+import './Components/NotesAppContext'
+import { NotesAppContext } from './Components/NotesAppContext'
 
 export default function App ()
 {
@@ -8,10 +12,10 @@ export default function App ()
   return (
     <>
       <div className='PocketNotesApp'>
-        {/* <NotesAppContext.Provider value={{ allGroups, setAllGroups }}> */}
-          {/* <Pane setChangeViewNotes={setChangeViewNotes} />
-          <ViewNotes changeViewNotes={changeViewNotes} /> */}
-        {/* </NotesAppContext.Provider> */}
+        <NotesAppContext.Provider value={{ allGroups, setAllGroups }}>
+          <Pane setChangeViewNotes={setChangeViewNotes} />
+          <ViewNotes changeViewNotes={changeViewNotes} />
+        </NotesAppContext.Provider>
       </div>
     </>
   )
